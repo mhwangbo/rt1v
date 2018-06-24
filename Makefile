@@ -6,25 +6,25 @@
 #    By: mhwangbo <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/09 17:05:50 by mhwangbo          #+#    #+#              #
-#    Updated: 2018/06/07 15:25:40 by jukim            ###   ########.fr        #
+#    Updated: 2018/06/23 17:52:43 by mhwangbo         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = wolf3d
+NAME = rtv1
 
-SRC =	main.c init.c positioning.c raycasting.c key.c
+SRC =	main.c
 
 OBJ = $(SRC:.c=.o)
 MLX = -L $(MLXDIR) -g -fsanitize=address -lmlx -framework OpenGL -framework Appkit
 
 SRCDIR = srcs
 OBJDIR = objs
-LIBDIR = lib/Libft
+LIBDIR = lib/libft
 MLXDIR = lib/minilibx_macos
 
 SRCS = $(addprefix $(SRCDIR)/, $(SRC))
 OBJS = $(addprefix $(OBJDIR)/, $(OBJ))
-LIBS = $(LIBDIR)/libft.a $(MLX)
+LIBS = $(LIBDIR)/libftprintf.a $(MLX)
 HEADER = -I includes -I $(LIBDIR)/ -I $(MLXDIR)
 
 CC = gcc
